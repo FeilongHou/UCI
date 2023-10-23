@@ -138,16 +138,16 @@ upstream and downstream are in different slots(halfduplex) \
 - (Efficiency)
 
 Performance metrics are interdependent \
-e.g.: no delay constraint = packet loss probability close to zero \
+e.g.: no delay constraint = packet loss probability close to zero 
 ## Processing delay
 defined by the hardware
 ## Propagation delay
-Propagation delay = distance/propagation speed \
+Propagation delay = distance/propagation speed 
 ## queueing delay
 it is random 
 ## Throughput
-Throughput = bits per seconds \ 
-3 server 3 clients the throughput is Min(Rs, R/3, Rc) \
+Throughput = bits per seconds \
+3 server 3 clients the throughput is Min(Rs, R/3, Rc) 
 ## Efficientcy
 data successfully delivered to the destination / overall resource used
 # Layers
@@ -155,3 +155,25 @@ data successfully delivered to the destination / overall resource used
 - layers provide functionalities/services to the upper layers
 - some information exchange (e.g. failure report)
 - NOT optional
+
+# 10/19
+## Process
+X(t) a random process
+## Poisson Process
+{X(t), t >= 0} increment
+assume t and s, where s < t, we have random variabel X(t) and X(s) \
+increment is X(t) - X(s) is random variable function of t-s\
+**Independent Increments** disjoint intervals (2 intervals that are not overlapped) \
+X(t1) - X(s1) and X(t2) - X(s2) are independent \
+continuous time {N(t): t >= 0} Rate is lambda \
+They have the following **properties**:
+1. N(0) = 0
+2. Has stationary(they have the same distribution i.e. same size interval) and independent increment
+3. Distribution of N(t) is Possion with mean lambda * t. P(N(t) = k) = (lambda * t)^k / k! * exp(-lambda * t)
+4. Superposition
+   - 2 Possion processes lambda1 and lambda2, sum together with rate lambda1 + lambda2
+5. Thinning
+   - P.P with rate lambda mark some events with probability P minus the ones that are not marked so we have new rate lambda * P
+
+## Possion process is a counting process
+P(N(t2 - t1) = k1) assuming 0 to t1 is the same as t1 to t2
