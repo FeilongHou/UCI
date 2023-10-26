@@ -177,3 +177,30 @@ They have the following **properties**:
 
 ## Possion process is a counting process
 P(N(t2 - t1) = k1) assuming 0 to t1 is the same as t1 to t2
+
+# 10/24
+## HTTP (application layer)
+**Does not track state**
+- Purpose: request and transfer a webpage from a server to a user
+- Service characteristcs:
+  - pages requested and sent at random times
+  - connected only for duration of download
+- Performance:
+  - loss, not ok
+  - delay, few seconds ok, but flexible
+  - throughput, higher is better, but flexible
+- Connection initiation
+  - well-known ports (80)
+  - client(browser) - server(webserver)
+  - connection access control (limited resources, TCP)
+  - server balancing
+- Connection management
+  - Non-persistent:
+    - each file requires a separated connection
+    - workaround: open parallel connection, one for each image
+  - persistent:
+    - close connection only after client is done with server (or timeout)
+    - Serial objects transfer
+
+## TCP connection (application layer)
+- 

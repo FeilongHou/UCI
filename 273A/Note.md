@@ -102,3 +102,24 @@ bias is from the funtion of the model \
 ## support vector machine (SVM)
 maximize margin
 vectir w = [w1, w2, ...] is orthogonal to boundary
+
+# 10/23
+soft margin introduce slack variables for violated constrains \
+smaller R allows more violation \
+dot product of xi and xj is measuring their similarity \
+
+# 10/25
+# Hard margin
+## Primal (hard to optimize)
+arg min w^2
+## Lagrangian (ok to optimize)
+arg min(theta) max(a) 
+## Dual (easy to optimize)
+arg max(a >= 0) 
+
+# Soft margin (non linearly separeable data)
+surrogate loss (hinge loss)
+## lagrangian 
+## Dual
+arg max (0 <= a <= R)
+K(x, x') -> 
