@@ -203,4 +203,79 @@ P(N(t2 - t1) = k1) assuming 0 to t1 is the same as t1 to t2
     - Serial objects transfer
 
 ## TCP connection (application layer)
-- 
+
+
+# 10/26
+## File sharing
+- Purpose: file a file and transfer it from multiple other users
+- Service characteristics:
+  - search for file
+  - identify which users have which pieces
+  - transfer pieces and put it together
+- Performance:
+  - loss - not ok
+  - Delay - very flexible, often hours
+  - throughput - higher is better, but flexible
+## File sharing: search
+- Location?
+  - e.g. tracker
+- Client-server or peer-to-peer?
+- Two functions:
+  - search usually client-server
+  - file transfer peer-to-peer
+
+## BitTorrent:
+- File split into "chunks"
+- CLient side:
+  - request missing chunks directly from other peers, via TCP
+- Server side:
+  - listen for and service requests for chunks you have, via TCP
+- Program:
+  - client algorithm determines which chunk to request first, e.g. rarest first
+  - Server algorithm determines rate, e.g. number connections, max rate
+
+## Streaming
+- Purpose: 1 way transmission of audio or video
+- Service characteristecs:
+  - constant bit rate (unless compressed)
+  - duration = mins to hours
+- Performance:
+  - loss- small amout ok
+  - delay - seconds, firm once stream started
+  - throughput - fixed
+## Voice and dideo over IP
+- Purpose: 2 way interactive transmission of voice and video
+- Service characteristics:
+  - constant bit rate (unless compressed)
+  - duration = mins to hours
+- Performance
+  - loss- small amout ok
+  - delay - a few tenths of a second
+  - throughput - fixed
+
+## QoS Requiremetns
+- Packet loss
+  - up to 20% is tolerated
+  - packedt llosses
+    - buffer overflow
+    - link layer
+    - delay
+- UDP vs TCP
+  - reliability (retransimission)
+  - delay
+  - buffer starvation
+  - delay variations
+- Jitter
+  - burst of packet
+  - Timestamp
+    - generation time
+  - **delayed playout**
+    - delay is a random variable
+    - variations due to network conditions
+    - min delay with loss constraint
+    - fixed playout
+      - t + q
+      - generation + delay+ max variations
+      - large variations = large delay
+    - adaptiove playout
+      - 
