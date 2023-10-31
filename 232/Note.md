@@ -278,4 +278,40 @@ P(N(t2 - t1) = k1) assuming 0 to t1 is the same as t1 to t2
       - generation + delay+ max variations
       - large variations = large delay
     - adaptiove playout
-      - 
+
+# 10/31
+## Packet loss recovery
+- TCP
+  - retransmission
+  - delay
+- Recovery
+  - FEC
+  - interleaving
+  - No additional RTT
+
+## FEC
+- Redundancy
+  - +1 ojet every N
+  - N small
+    - larger than generation rate
+  - delay: wait for entire group
+- Low rate stream
+  - low quality/low-bitrate stream appended
+
+## Interleaving
+**rearrange before sent, after received reconstruct**
+- Samples are resequenced
+  - adjucent sanples assigned to different chunks
+- Packet loss mitigated
+  - avoids gaps
+- increased latency
+- same bandwidth
+
+## Real Time Protocal (RTP)
+- UDP
+  - RTP-UDP-IP
+- RTP
+  - independent RTP stream per source
+  - video/audio payload+header
+
+## Support Multimedia
