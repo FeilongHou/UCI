@@ -123,3 +123,6 @@ surrogate loss (hinge loss)
 ## Dual
 arg max (0 <= a <= R)
 K(x, x') -> 
+
+# 11/01
+VC dimension H describe the number of points that can be shattered by model
