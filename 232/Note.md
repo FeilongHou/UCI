@@ -315,3 +315,45 @@ P(N(t2 - t1) = k1) assuming 0 to t1 is the same as t1 to t2
   - video/audio payload+header
 
 ## Support Multimedia
+
+# 11/07
+## queueing system
+router can be count as a queueing system \
+## Delay analysis
+arrival -> (rejection) -> delay -> departures \
+T time spent in the system \
+N(t) -> # of things in the system at time t \
+Pb probability of "blocking" \
+A(t) -> arrival ip to time t \
+D(t) -> departures up to time t \
+B(t) -> blocked up to time t \
+N(t) = A(t) - D(t) - B(t)
+
+## Arrival rate (pkt/sec)
+lambda = lim(t -> inf) A(t)/t
+## Through put (pkt/sec) rate of pkt went through
+lim(t -> inf) D(t)/t
+## Pb
+lim(t -> inf) B(t)/A(t)
+## Expected # of pkts in system
+E[N] = lim(t -> inf) 1/t integral from 0 to t (N(telda) dt) \
+average area under the curve
+
+## Arrival graph
+looks like stairs going up\
+lambda = lim(n -> inf) n/(tel1 + tel2 + ... + teln) or 1/(tel1 + tel2 + ... + teln)/n = 1/E[tel]
+## Little's Formula
+E[N] = lambda * E[T] \
+N(t) = A(t) - D(t) \
+1/t0 integral from 0 to t0 N(t') dt' = 1/t0 sum (j = 1 to A(t0)) Tj * 1 = A(t0)/t0 * (1/A(t0) sum J = 1 to A(t0) Tj) \
+
+with blocking: \
+E[N] = lambda * (1 - Pb) * E[T]
+
+## queueing model
+A(t) -> B(t) -> buffer -> server -> D(t) \
+lambda = 1/E[t]    service time mu = 1/E[x]\ 
+m : arrival distribution m->Exp G->general D->Deterministic \
+mu : servie distribution \
+c : # of server \
+k : max # pkts in system
