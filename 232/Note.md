@@ -352,8 +352,57 @@ E[N] = lambda * (1 - Pb) * E[T]
 
 ## queueing model
 A(t) -> B(t) -> buffer -> server -> D(t) \
-lambda = 1/E[t]    service time mu = 1/E[x]\ 
+lambda = 1/E[t]    service time mu = 1/E[x] \
 m : arrival distribution m->Exp G->general D->Deterministic \
 mu : servie distribution \
 c : # of server \
 k : max # pkts in system
+
+# 11/21
+m/m/1/k \
+buffer with k slots, one is being served \
+interarrival -> tal~EXP[lambda] E[lambda] = 1/lambda \
+Arrival -> A(t) is a possion process \
+service x~EXP[mu] E[x] = 1/mu \
+state: 1, 2, 3, .... , k \
+dt \
+P[1 arrival in dt] = lambda * dt + o(dt) \
+P[0 arrival in dt] = 1 - lambda * dt + o(dt) \
+P[>1 arrivals in dt] = o(dt) \
+P[1 departure in dt] = mu * dt + o(dt) \
+P[0 departure in dt] = 1 - mu * dt + o(dt) \
+P[>1 departure in dt] = o(dt) \
+P[0 arrival & 0 departure] = (1 - lambda * dt + o(dt))(1 - mu * dt + o(dt)) = 1 - (lambda + mu) * dt + o(dt) \
+P[1 arrival & 0 departure] = (lambda * dt + o(dt))(1 - mu * dt + o(dt)) = 
+lambda * dt + o(dt) \
+P[0 arrival & 1 departure] = (1 - lambda * dt + o(dt))(mu * dt + o(dt)) = mu * dt + o(dt) \
+P[1 arrival & 1 departure] = o(dt) 
+
+P[stay at 0 state] = 1 - lambda * dt \
+P[goes to 1 state] = lambda * dt \
+P[stay at n state] = 1 - (lambda + mu) * dt \
+P[go to n+1 state] = lambda * dt \
+P[go to n-1 state] = mu * dt 
+
+P(N(t) = n) = Pn 
+
+m/m/1 with infinite buffer(state) \
+Pn+1 * (mu * dt) = Pn * (lambda * dt) flow conservation \
+Pn+1 = (lambda / mu) * Pn \
+Pn = (lambda / mu) * Pn-1 \
+Pn+1 = (lambda / mu)^(n+1) * P0 \
+1 = P0 + P1 + P2 + ... \
+1 = P0(1 + ro + ro^2 +  ro^3 + ...) where ro = lambda / mu \
+1 = P0 (1/(1 - ro)) -> P0 = 1 - ro = 1 - lambda/mu \
+Pn = (1 - ro) * ro^n \
+E[N] = sum (n * Pn) = sum (n (1-ro) * ro^n) = ro/(1 - ro) \
+E[Total time] = E[N] / lambda = (1/mu)/(1-ro) \
+E[waiting time] = E[Total] - E[x(service time)] = (1/mu)*ro/(1-ro) 
+
+m/m/1/k \
+Pn+1 = ro^(n+1) * P0
+1 = P0 * (1-ro^k+1) / (1-ro) \
+P0 = (1-ro)/(1-ro^k+1) \
+Pn = (1-ro) * ro^n / (1-ro^k+1) \
+E[N] = sum (n * Pn) = ro/(1-ro) * ((k+1)ro^k+1)/(1-ro^k+1) \
+E[T] = E[N]/(lambda * (1-Pk)) \
