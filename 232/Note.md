@@ -406,3 +406,19 @@ P0 = (1-ro)/(1-ro^k+1) \
 Pn = (1-ro) * ro^n / (1-ro^k+1) \
 E[N] = sum (n * Pn) = ro/(1-ro) * ((k+1)ro^k+1)/(1-ro^k+1) \
 E[T] = E[N]/(lambda * (1-Pk)) \
+
+# 11/28
+m/m/c/c \
+first c: # of server \
+second c: # of things queuing \
+mu = 1/E[x] \
+P[connection request in dt] = lambda * dt \
+P[1 connection termination in dt | N(t) = n] = n * mu * dt \
+P[nothing happens in dt | N(t) = n] = 1 - (lambda + n * mu) * dt \
+At c-1 stage moving back to c-2 stage is (c-1) * mu * dt \
+Pn+1 * (n + 1) * mu * dt = Pn * lambda * dt -> Pn+1 = lambda/((n+1)*mu) * Pn = (lambda/mu)^(n+1)/(n+1)! * P0 \
+1 = P0 + P1 + ... + Pc = P0 sum n from 0 to c(ro^n/n!) ro = lambda/mu \
+P0 = 1/sum n from 0 to c(ro^n/n!) \
+P[N(t) = n] = ro^n/n! / sum k from 0 to c(ro^k/k!) \
+Pb = Pc = ro^c/c! / sum k from 0 to c(ro^k/k!) \
+E[T] = 1/mu \

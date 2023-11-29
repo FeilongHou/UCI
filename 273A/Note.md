@@ -126,3 +126,7 @@ K(x, x') ->
 
 # 11/01
 VC dimension H describe the number of points that can be shattered by model
+
+# 11/08
+## Decision Tree
+Function form a nested "if-then-else" tree
