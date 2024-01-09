@@ -404,7 +404,7 @@ Pn+1 = ro^(n+1) * P0
 1 = P0 * (1-ro^k+1) / (1-ro) \
 P0 = (1-ro)/(1-ro^k+1) \
 Pn = (1-ro) * ro^n / (1-ro^k+1) \
-E[N] = sum (n * Pn) = ro/(1-ro) * ((k+1)ro^k+1)/(1-ro^k+1) \
+E[N] = sum (n * Pn) = ro/(1-ro) - ((k+1)ro^k+1)/(1-ro^k+1) \
 E[T] = E[N]/(lambda * (1-Pk)) \
 
 # 11/28
