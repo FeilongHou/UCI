@@ -42,3 +42,14 @@ o (<) \
 big omega (>=) \
 small omega (>) \
 
+## 1/23
+**Greedy Algorithms**
+- An approach to solving optimization problems
+- No crisp defination but build up from small steps each step make decision base on local information
+- To implement heuristics is easy
+- To obtain a global optimum is often impossible
+
+If greedy does provide an optimal solution that implies the algorithm is simple but proof of optimality is nontriial 
+
+Greedy might not be optimal at many situations
+
