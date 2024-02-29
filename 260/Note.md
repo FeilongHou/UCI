@@ -53,3 +53,80 @@ If greedy does provide an optimal solution that implies the algorithm is simple 
 
 Greedy might not be optimal at many situations
 
+## 1/30
+DFS traversal of an undirected graph partitions the edges into tree edges and back edges
+- Tree deges connect a node X to a node Y
+
+DFS traversal of a directed graph partitions the edges into tree edges, forward edges, back edges, and cross edges
+
+## week 4 Discussion
+Interval Scheduling \
+greedy: picking the one end the earliest \
+
+
+[6-8] [2-10] [5-18] [4-6] [1-2] [3-5] [8-10] [12-18] [0-12] [16-20] \
+CPU 1: [0-12] \
+CPU 2: [1-2] [2-10] [12-18]\
+CPU 3: [3-5] [5-18] \
+CPU 4: [4-6] [6-8] [8-10] [16-20]\
+greedy: picking the one start the earliest \
+
+**task scheduleing with deadline** \
+greedy: starting the earliest deadline
+
+**Dijkstra's Algorithm** \
+Finds the minimum distance between one point to all other points. \
+small negative weights solvable! \
+large negative weights that create a negative cycle, question is meaningless. \
+Dijkstra loop: O(n + m) \
+at each step: we need to sort the smallest path O(nlogn) \
+total time complexity O((n+m)logn) \
+
+**How to find MST** \
+Jarnik/Prim
+- only add min edges
+- dont add any that causes a cycle
+
+Kruskal
+- look at globallly min cost edge
+- dont add that causes a cycle
+
+Borunka
+- 
+
+## week 5 discussion
+a: O(n^1.33) \
+b: O(n^2) \
+c: o(n^1/2) \
+d:  \
+**simplify to n^(log_b(a))** \
+if n in front of log is the same add one more log^1(n) \
+
+## 2/13
+exercise 4: if a sequence is a subsequence of another sequence. \
+exercise 9: a NO b YES proof by contradiction
+
+## week 6 discussion
+if largest coin is twice as big as the second largest, it is safe to do greedy algorithm \
+
+## week 7 discussion
+**Exam!!!!!** \
+Greedy:
+- Minimize lateness(easy) 
+- Dijkstra's (maybe modification) *****
+- MST *****
+  - prim/jarnik
+  - kruskal
+  - bouauuka
+- Huffman (typically easy)
+- Bellman ford
+- min cost arboreence (easy maybe)
+- divide & conquer ****
+  - master theorem
+  - FFT (not likely)
+- DP ****
+  - at some instance of middle of solving what sub instance can be used
+- Fast exponentiation(always adding)
+
+
+
