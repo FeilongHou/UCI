@@ -128,5 +128,35 @@ Greedy:
   - at some instance of middle of solving what sub instance can be used
 - Fast exponentiation(always adding)
 
+## Week 9 discussion
+cost of the cut is the capacity of cut edges \
+solve max flow, then BFS begining at source \
+min cut is the min cost of any cut \
+value of the min cut = value of max flow \
 
+## Final!!!!!!
+GS-matching 
+1. Graph 
+   - BFS/DFS
+   - topological 
+  
+2. Greedy 
+   - Dijkstra
+   - scheduling
+  
+3. divide and conquer 
+4. DP ******
 
+5. networks
+   - flow
+   - min cut
+
+6. NP complete \
+There are 2 steps:
+    1. show if one gives you solution can you check if is correct in polynomial time
+    2. Reduction: knowing one difficult question that is NP complete, no one knows how to solve it. I have one question that I don't know if it is NP complete. In polynomial time change NP complete to our question. There are 3 parts that might not be polynomial time, changing, SOLVING, revert.  show an existing NP-completeness question can 
+
+typicall NP 
+   - vertex cover
+   - independent set
+   - Hamiltonian path
