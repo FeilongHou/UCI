@@ -104,3 +104,25 @@ then
 - task 3 50ms
 
 divide 90ms to 2 tasks so each one get 45ms \
+
+## engergy comsumptions
+P_total = P_dynamic + P_static \
+the goal is to reduce power consumptions to preserve battery life and reduce heat on portable device. \
+voltage frequency pair: high frequency high voltage, and vise versa. \
+ off-load task from one core to 4 cores with lower frequency. The computation time is the same but saves enery and power due to non-linear relationship to volatge. \
+
+ ## ILP (interger linear programming)
+ x1, x2, x3, ... , xn \
+ constrains: linear function of variables (2x1 - 3x2 + 0.5x3 <= 3.5) \
+ objective: max 2x1 + 3x2 - x4 \
+ knapsack example: constrains cixi <= C \
+ max gixi  where gi is value 
+
+HW: T1 -> T2 -> T3 Deadline D1, D2, D3 \
+CPU: (v1, f1) (v2, f2) \
+x1 indicates if T1 is running on (v1, f1) or (v2, f2) \
+xij = 1 if Ti was at (v1, f1) else 0 \
+excution time of T1 <= D1 \
+sum of Cijx1j for all j <= D1 \
+uniqueness contrains: sum of xij for all j = 1 \
+C1jx1j + C2jx2j <= D2
